@@ -1,17 +1,21 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>AI Fact Checker</title>
-  <link rel="stylesheet" href="/static/style.css">
+    <meta charset="UTF-8">
+    <title>Fact Checker Bot</title>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-  <h1>AI Fact Checker</h1>
-  <form id="factForm">
-    <input type="text" id="statement" placeholder="Enter a fact to check" required>
-    <button type="submit">Check</button>
-  </form>
-  <div id="result"></div>
-
-  <script src="/static/script.js"></script>
+    <div class="container">
+        <h1>AI Fact Checker 🤖</h1>
+        <form method="post" action="/check">
+            <input type="text" name="fact" placeholder="Enter a fact..." required>
+            <button type="submit">Check</button>
+        </form>
+        {% if result %}
+            <div class="result">{{ result }}</div>
+        {% endif %}
+    </div>
 </body>
 </html>
