@@ -1,0 +1,19 @@
+{
+  "builds": [
+    {
+      "src": "api/index.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/check",
+      "methods": ["POST"],
+      "dest": "api/index.py"
+    },
+    {
+      "src": "/.*",
+      "dest": "api/index.py"
+    }
+  ]
+}
